@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Trirong');
+@import "tailwindcss";
+
+:root {
+    --bg-color: #000;
+    --bg2-color: #1a1a1a;
+    --primary-color: #00ffff;
+    --secondary-color: #fff;
+}
+
+html, body {
+    font-family: "Trirong", sans-serif;
+    color: var(--secondary-color);
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+@layer utilities {
+    .bg-clip-text {
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .hover\:text-glow:hover {
+        text-shadow: 0 0 10px var(--primary-color);
+    }
+}

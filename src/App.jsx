@@ -22,7 +22,7 @@ function App() {
     }, []);
 
     return (
-      <div className="bg-black min-h-screen">
+      <div className="min-h-screen bg-black">
         {isCorrectWidth ? (
           <>
             <Navbar />
@@ -32,7 +32,9 @@ function App() {
             <Contact />
           </>
         ) : (
-          <p>Hello</p>
+          <div className="min-h-screen flex items-center justify-center">
+            <p className="text-center text-red-500">Not yet responsive for smaller screens. <br /> Please use desktop version in mobile.</p>
+          </div>
         )
         }
       </div>

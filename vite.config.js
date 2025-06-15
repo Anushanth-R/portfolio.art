@@ -4,6 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/anushanth.art/',
+  base: '/portfolio.art/',
   plugins: [react(), tailwindcss()],
 })

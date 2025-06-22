@@ -15,24 +15,24 @@ function Navbar() {
 
       {/* Nav Links */}
       <nav>
-        <ul id="nav-links" className="hidden md:flex gap-7 text-base text-[var(--primary-color)] font-medium">
+        <ul id="nav-links" className="hidden md:flex gap-7 text-base lg:text-lg text-[var(--primary-color)] font-medium">
           <li className="m-[2px] flex items-center justify-center">
-            <a href="#home" className="px-[15px] py-[3px] rounded-[10px] transition-all duration-300 hover:rounded-[5px_12px] hover:shadow-[0_0_10px_var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-black">
+            <a href="#home" className="px-[15px] py-[1px] rounded-[10px] transition-all duration-300 hover:rounded-[5px_12px] hover:shadow-[0_0_10px_var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-black">
               Home
             </a>
           </li>
           <li className="m-[2px] flex items-center justify-center">
-            <a href="#about" className="px-[15px] py-[3px] rounded-[10px] transition-all duration-300 hover:rounded-[5px_12px] hover:shadow-[0_0_10px_var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-black">
+            <a href="#about" className="px-[15px] py-[1px] rounded-[10px] transition-all duration-300 hover:rounded-[5px_12px] hover:shadow-[0_0_10px_var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-black">
               About
             </a>
           </li>
           <li className="m-[2px] flex items-center justify-center">
-            <a href="#projects" className="px-[15px] py-[3px] rounded-[10px] transition-all duration-300 hover:rounded-[5px_12px] hover:shadow-[0_0_10px_var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-black">
+            <a href="#projects" className="px-[15px] py-[1px] rounded-[10px] transition-all duration-300 hover:rounded-[5px_12px] hover:shadow-[0_0_10px_var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-black">
               Portfolio
             </a>
           </li>
           <li className="m-[2px] flex items-center justify-center">
-            <a href="#contact" className="px-[15px] py-[3px] rounded-[10px] transition-all duration-300 hover:rounded-[5px_12px] hover:shadow-[0_0_10px_var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-black">
+            <a href="#contact" className="px-[15px] py-[1px] rounded-[10px] transition-all duration-300 hover:rounded-[5px_12px] hover:shadow-[0_0_10px_var(--primary-color)] hover:bg-[var(--primary-color)] hover:text-black">
               Contact
             </a>
           </li>

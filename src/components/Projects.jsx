@@ -4,7 +4,7 @@ import project3 from '../assets/project3.png'
 
 function Projects() {
     return (
-        <section id="projects" className="h-[calc(100dvh-45px)] flex flex-wrap gap-5 items-center justify-center scroll-mt-[45px]">
+        <section id="projects" className="min-h-[calc(100dvh-35px)] px-3 py-6 flex flex-wrap gap-5 items-center justify-center scroll-mt-[40px]">
             <div className="border-2 border-white max-w-[300px] flex flex-col p-4 rounded-2xl shadow-lg hover:shadow-[0_0_15px_var(--primary-color)] transition-shadow duration-300">
                 <img src={project1} alt="thumbnail" className="w-full h-[180px] object-cover rounded-xl" />
                 <h2 className="text-center p-4">Hotel Revenue Exploratory Data Analysis</h2>

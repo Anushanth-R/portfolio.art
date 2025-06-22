@@ -2,7 +2,7 @@ import profile from "../assets/profile0.jpg";
 
 function Home() {
   return (
-    <section id="home" className="h-[calc(100dvh-45px)] flex items-center justify-center gap-[15px] scroll-mt-[45px]">
+    <section id="home" className="h-[calc(100dvh-35px)] px-3 py-6 flex items-center justify-center gap-[15px] scroll-mt-[40px]">
       <div className="ml-[15px]">
         <img src={profile} alt="its-me" className="w-[35vw] rounded-[50%] border-3 border-[var(--primary-color)] shadow-[0_0_10px_var(--primary-color)]"/>
       </div>

@@ -6,7 +6,7 @@ function Contact() {
 
 
     return (
-        <section id="contact" className="min-h-screen scroll-mt-[45px] flex flex-col md:flex-row justify-center items-center p-6">
+        <section id="contact" className="h-[calc(100dvh-35px)] px-3 py-6 scroll-mt-[40px] flex flex-col md:flex-row justify-center items-center p-6">
             {/* Contact Info */}
             <div className="md:w-1/2 w-full border-b md:border-b-0 border-[var(--primary-color)] flex flex-col justify-center items-center gap-4 py-6 md:py-0">
                 <p className="text-center">

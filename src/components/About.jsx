@@ -6,7 +6,7 @@ function About() {
     const [activeTab, setActiveTab] = useState("experience");
     
     return(
-        <section className="h-[calc(100dvh-45px)] flex flex-col items-center justify-center scroll-mt-[45px]" id="about">
+        <section className="min-h-[calc(100dvh-35px)] px-3 py-6 flex flex-col items-center justify-center scroll-mt-[40px]" id="about">
             
             {/* About Info */}
             <div className="flex flex-col items-center justify-center">

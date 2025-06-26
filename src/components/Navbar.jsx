@@ -6,8 +6,8 @@ function Navbar() {
   const hamClicked = () => setRotateHam((ham) => !ham);
 
   return (
-    <header id="navbar" className="bg-[var(--bg2-color)] flex justify-between items-center w-full h-[40px] p-[20px] border-b border-[var(--primary-color)] shadow-[0_0_10px_var(--primary-color)] sticky top-0">
-      <h1 className="text-xl font-bold tracking-widest text-transparent bg-[url('./assets/text_background.jpg')] bg-contain bg-clip-text transition-all duration-200 ease-[ease] hover:scale-[1.01] hover:text-glow">
+    <header id="navbar" className="bg-[var(--bg2-color)] flex justify-between items-center w-full h-[40px] px-[20px] border-b border-[var(--primary-color)] shadow-[0_0_10px_var(--primary-color)] sticky top-0">
+      <h1 className="text-lg md:text-xl font-bold tracking-widest text-transparent bg-[url('./assets/text_background.jpg')] bg-contain bg-clip-text transition-all duration-200 ease-[ease] hover:scale-[1.01] hover:text-glow">
         <a href="#">
           Anushanth <span>R</span>
         </a>

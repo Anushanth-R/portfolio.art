@@ -7,7 +7,7 @@ function Home() {
         <img src={profile} alt="its-me" className="w-[55vw] md:w-[35vw] rounded-[50%] border-2 md:border-3 border-[var(--primary-color)] shadow-[0_0_10px_var(--primary-color)]"/>
       </div>
       <div className="md:mr-[10px] md:px-[5px] flex flex-col items-center justify-center md:block">
-        <h1 className="text-2xl md:text-4xl font-bold py-[2px] md:py-[5px]">
+        <h1 className="text-2xl md:text-3xl font-bold py-[2px] md:py-[5px]">
           Hey, I'm{" "}
           <span className="text-[var(--primary-color)] tracking-wider">Anushanth!</span>
         </h1>

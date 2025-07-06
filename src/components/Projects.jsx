@@ -4,7 +4,7 @@ import project3 from '../assets/project3.png'
 
 function Projects() {
     return (
-        <section id="projects" className="min-h-[calc(100dvh-40px)] px-3 py-6 flex flex-col justify-center scroll-mt-[40px]">
+        <section id="projects" className="min-h-[calc(100dvh-45px)] px-3 py-6 flex flex-col justify-center scroll-mt-[45px]">
             <div className="w-full text-center mb-10">
                 <h1 className="text-xl md:text-2xl font-bold text-white underline decoration-[var(--primary-color)]">My Works</h1>
             </div>

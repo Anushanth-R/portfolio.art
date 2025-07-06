@@ -6,11 +6,11 @@ function About() {
     const [activeTab, setActiveTab] = useState("experience");
     
     return(
-        <section className="min-h-[calc(100dvh-40px)] px-3 py-3 md:py-6 flex flex-col items-center justify-center scroll-mt-[40px]" id="about">
+        <section className="min-h-[calc(100dvh-45px)] px-3 py-3 md:py-6 flex flex-col items-center justify-center scroll-mt-[45px]" id="about">
             
             {/* About Info */}
             <div className="flex flex-col items-center justify-center">
-                <h2 className="text-xl md:text-3xl font-bold my-[5px]">
+                <h2 className="text-xl md:text-3xl font-bold">
                     Let me introduce <span className="text-[var(--primary-color)]">myself...</span>
                 </h2>
                 <p className="text-base md:text-lg text-justify my-[6px] mx-[10px] md:my-[10px] md:mx-[30px]">
@@ -24,16 +24,16 @@ function About() {
             {/* Exp & Edu Tabs */}
             <div className="flex justify-center my-[20px] md:my-[30px] gap-[10px]">
                 <button onClick={() => setActiveTab("experience")}
-                className={`text-sm font-bold text-black py-[10px] px-[20px] rounded-xl ${activeTab === "experience" ? "bg-[var(--primary-color)]" : "bg-[#ddd]"}`}>🏢 Experience</button>
+                className={`text-sm md:text-base font-bold text-black py-[10px] px-[20px] rounded-xl ${activeTab === "experience" ? "bg-[var(--primary-color)]" : "bg-[#ddd]"}`}>🏢 Experience</button>
                 <button onClick={() => setActiveTab("education")}
-                className={`text-sm font-bold text-black py-[10px] px-[20px] rounded-xl ${activeTab === "education" ? "bg-[var(--primary-color)]" : "bg-[#ddd]"}`}>📚 Education</button>
+                className={`text-sm md:text-base font-bold text-black py-[10px] px-[20px] rounded-xl ${activeTab === "education" ? "bg-[var(--primary-color)]" : "bg-[#ddd]"}`}>📚 Education</button>
             </div>
 
             <div className="tab-contents">
                 {activeTab === "experience" &&(
                     <div id="experience" className="active flex flex-col justify-center">
                         <ul className="">
-                            <li className="mb-[10px] py-[10px] px-[25px] border-l-3 border-[var(--primary-color)] rounded-lg"><strong>Research Analyst</strong> - Mentor Thesis (2024-Present)</li>
+                            <li className="mb-[10px] py-[10px] px-[25px] border-l-3 border-[var(--primary-color)] rounded-lg"><span className="text-[var(--primary-color)] md:text-lg">Research Analyst</span> - Mentor Thesis (2024-Present)</li>
                         </ul>
                     </div>
                     )
@@ -42,8 +42,8 @@ function About() {
                 {activeTab === "education" && (
                     <div id="education" className="flex flex-col justify-center">
                         <ul className="">
-                            <li className="mb-[10px] py-[10px] px-[25px] border-l-3 border-[var(--primary-color)] rounded-lg"><strong>Bachelor's in Mechanical</strong> - Bethlahem Institute, Ulaganvila (2018-2022)</li>
-                            <li className="mb-[10px] py-[10px] px-[25px] border-l-3 border-[var(--primary-color)] rounded-lg"><strong>Higer Secondary</strong> - Hindu Vidyalaya, Karungal (2017-2018)</li>
+                            <li className="mb-[10px] py-[10px] px-[25px] border-l-3 border-[var(--primary-color)] rounded-lg"><span className="text-[var(--primary-color)] md:text-lg">Bachelor's in Mechanical</span> - Bethlahem Institute, Ulaganvila (2018-2022)</li>
+                            <li className="mb-[10px] py-[10px] px-[25px] border-l-3 border-[var(--primary-color)] rounded-lg"><span className="text-[var(--primary-color)] md:text-lg">Higer Secondary</span> - Hindu Vidyalaya, Karungal (2017-2018)</li>
                         </ul>
                     </div>
                     )

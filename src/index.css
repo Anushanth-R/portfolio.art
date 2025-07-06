@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Trirong');
+@import url('https://fonts.googleapis.com/css2?family=Trirong&display=swap');
+
 @import "tailwindcss";
 
 :root {
-    --bg-color: #000;
+    --bg-color: black;
     --bg2-color: #1a1a1a;
     --primary-color: #00ffff;
     --secondary-color: #fff;
@@ -11,6 +12,7 @@
 html, body {
     font-family: "Trirong", sans-serif;
     color: var(--secondary-color);
+    background-color: var(--bg-color);
     scroll-behavior: smooth;
     box-sizing: border-box;
     text-decoration: none;

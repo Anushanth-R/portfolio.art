@@ -1,84 +1,99 @@
-import { useState } from 'react';
-import power_bi from '../assets/Power-BI.svg'
-import resume from '../assets/resume.pdf'
+import powerBi from "../assets/Power-BI.svg";
+
+const iconBase = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
+
+const skillGroups = [
+  {
+    title: "Data Analytics",
+    skills: [
+      { name: "SQL (MySQL)", icon: `${iconBase}/mysql/mysql-original-wordmark.svg` },
+      { name: "Power BI", icon: powerBi },
+    ],
+  },
+  {
+    title: "Web Development",
+    skills: [
+      { name: "HTML", icon: `${iconBase}/html5/html5-original-wordmark.svg` },
+      { name: "CSS", icon: `${iconBase}/css3/css3-original-wordmark.svg` },
+      { name: "JavaScript", icon: `${iconBase}/javascript/javascript-original.svg` },
+      { name: "React", icon: `${iconBase}/react/react-original-wordmark.svg` },
+      { name: "Tailwind CSS", icon: `${iconBase}/tailwindcss/tailwindcss-plain-wordmark.svg` },
+    ],
+  },
+];
 
 function About() {
-    const [activeTab, setActiveTab] = useState("experience");
-    
-    return(
-        <section className="min-h-[calc(100dvh-45px)] px-3 py-3 md:py-6 flex flex-col items-center justify-center scroll-mt-11.25" id="about">
-            
-            {/* About Info */}
-            <div className="flex flex-col items-center justify-center">
-                <h2 className="text-xl md:text-3xl font-bold">
-                    Let me introduce <span className="text-(--primary-color)">myself...</span>
-                </h2>
-                <p className="text-base md:text-lg text-justify my-1.5 mx-2.5 md:my-2.5 md:mx-7.5">
-                    Hey there! I'm Anushanth, someone who enjoys building simple, interactive websites with HTML, CSS, and JavaScript. I like turning ideas into things you can see and click, and sometimes I mix in a bit of data to make it more interesting. When I'm not coding, I'm probably digging into cricket stats or off in my own world of ideas, just seeing where they take me.
-                </p>
-                <a href={resume} download className="text-black text-sm md:text-base font-bold bg-(--primary-color) py-2.5 px-5 rounded-2xl transition ease-in-out duration-200 hover:bg-sky-500">
-                    📄 Download Resume
-                </a>
-            </div>
+  return (
+    <section
+      id="about"
+      aria-labelledby="about-heading"
+      className="mx-auto flex min-h-[calc(100dvh-45px)] w-full max-w-5xl scroll-mt-[30px] flex-col justify-center gap-8 px-5 py-12 md:gap-10 md:px-8"
+    >
+      <div>
+        <h2 id="about-heading" className="text-2xl font-bold md:text-3xl">
+          About <span className="text-[var(--primary-color)]">me</span>
+        </h2>
+        <p className="mt-3 leading-relaxed md:text-lg text-justify">
+          I studied mechanical engineering and now work as a Research Analyst at Mentor Thesis.
+          I enjoy digging into data to understand what changed and explore what might explain it. I also build websites to share my work. I'm particularly interested in exploring real-world datasets and presenting insights through visualizations.
+        </p>
+      </div>
 
-            {/* Exp & Edu Tabs */}
-            <div className="flex justify-center my-5 md:my-7.5 gap-2.5">
-                <button onClick={() => setActiveTab("experience")}
-                className={`text-sm md:text-base font-bold text-black py-2.5 px-5 rounded-xl ${activeTab === "experience" ? "bg-(--primary-color)" : "bg-[#ddd]"}`}>🏢 Experience</button>
-                <button onClick={() => setActiveTab("education")}
-                className={`text-sm md:text-base font-bold text-black py-2.5 px-5 rounded-xl ${activeTab === "education" ? "bg-(--primary-color)" : "bg-[#ddd]"}`}>📚 Education</button>
-            </div>
+      <div className="grid gap-5 md:grid-cols-[3fr_2fr]">
+        <div className="rounded-xl border border-white/15 bg-[var(--bg2-color)] p-5">
+          <h3 className="text-lg font-bold text-[var(--primary-color)]">Experience</h3>
+          <p className="mt-3 font-semibold">Research Analyst · Mentor Thesis</p>
+          <p className="text-sm text-white/75">2024–Present</p>
+          <ul className="mt-3 list-disc space-y-2 pl-5 leading-relaxed">
+            <li>
+              Analyzed peer review feedback and made technical and editorial revisions,
+              consistently meeting tight deadlines and completing quality checks before submission.
+            </li>
+            <li>
+              Coordinated a small team during peak periods, assigning tasks, tracking
+              progress, and reviewing deliverables across concurrent projects.
+            </li>
+          </ul>
+        </div>
 
-            <div className="tab-contents">
-                {activeTab === "experience" &&(
-                    <div id="experience" className="active flex flex-col justify-center">
-                        <ul className="">
-                            <li className="mb-2.5 py-2.5 px-6.25 border-l-3 border-(--primary-color) rounded-lg"><span className="text-(--primary-color) md:text-lg">Research Analyst</span> - Mentor Thesis (2024-Present)</li>
-                        </ul>
-                    </div>
-                    )
-                }
+        <div className="rounded-xl border border-white/15 bg-[var(--bg2-color)] p-5">
+          <h3 className="text-lg font-bold text-[var(--primary-color)]">Education</h3>
+          <ul className="mt-3 space-y-4">
+            <li>
+              <p className="font-semibold">Bachelor’s in Mechanical Engineering</p>
+              <p className="text-sm text-white/75">Bethlahem Institute, Ulaganvila · 2018–2022</p>
+            </li>
+            <li>
+              <p className="font-semibold">Higher Secondary</p>
+              <p className="text-sm text-white/75">Hindu Vidyalaya, Karungal · 2017–2018</p>
+            </li>
+          </ul>
+        </div>
+      </div>
 
-                {activeTab === "education" && (
-                    <div id="education" className="flex flex-col justify-center">
-                        <ul className="">
-                            <li className="mb-2.5 py-2.5 px-6.25 border-l-3 border-(--primary-color) rounded-lg"><span className="text-(--primary-color) md:text-lg">Bachelor's in Mechanical</span> - Bethlahem Institute, Ulaganvila (2018-2022)</li>
-                            <li className="mb-2.5 py-2.5 px-6.25 border-l-3 border-(--primary-color) rounded-lg"><span className="text-(--primary-color) md:text-lg">Higer Secondary</span> - Hindu Vidyalaya, Karungal (2017-2018)</li>
-                        </ul>
-                    </div>
-                    )
-                }
+      <div>
+        <h3 className="text-xl font-bold">Skills &amp; Technologies</h3>
+        <div className="mt-4 grid gap-5 md:grid-cols-[2fr_3fr]">
+          {skillGroups.map(({ title, skills }) => (
+            <div key={title}>
+              <h4 className="font-semibold text-[var(--primary-color)]">{title}</h4>
+              <ul className="mt-2 flex flex-wrap gap-2">
+                {skills.map(({ name, icon }) => (
+                  <li
+                    key={name}
+                    className="inline-flex items-center gap-2 rounded-lg border border-white/15 px-3 py-2 text-sm hover:border-[var(--primary-color)]/60 hover:bg-[var(--primary-color)]/10 motion-safe:transition-colors"
+                  >
+                    <img src={icon} alt="" className="size-6 rounded bg-white p-0.5" />
+                    {name}
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            {/* My Skills */}
-            <div className="skills">
-                <h1 className="text-xl md:text-2xl text-center my-2.5 underline decoration-(--primary-color)">Skills & Technologies</h1>
-                <div className="grid grid-cols-4 md:grid-cols-7 gap-8.75">
-                    <div className="p-1.75 bg-[#ddd] rounded-[15px_5px_15px_5px]">
-                        <img className="size-8.75 md:size-12.5" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original-wordmark.svg" alt="html" title="HTML" />
-                    </div>
-                    <div className="p-1.75 bg-[#ddd] rounded-[15px_5px_15px_5px]">
-                        <img className="size-8.75 md:size-12.5" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original-wordmark.svg" alt="css" title="CSS" />
-                    </div>
-                    <div className="p-1.75 bg-[#ddd] rounded-[15px_5px_15px_5px]">
-                        <img className="size-8.75 md:size-12.5" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="javascript" title="JavaScript" />
-                    </div>
-                    <div className="p-1.75 bg-[#ddd] rounded-[15px_5px_15px_5px]">
-                        <img className="size-8.75 md:size-12.5" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" alt="react" title="React" />
-                    </div>
-                    <div className="p-1.75 bg-[#ddd] rounded-[15px_5px_15px_5px]">
-                        <img className="size-8.75 md:size-12.5" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-plain-wordmark.svg" alt="tailwindcss" title="TailwindCSS" />
-                    </div>
-                    <div className="p-1.75 bg-[#ddd] rounded-[15px_5px_15px_5px]">
-                        <img className="size-8.75 md:size-12.5" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg" alt="mysql" title="MySQL" />
-                    </div>
-                    <div className="p-1.75 bg-[#ddd] rounded-[15px_5px_15px_5px]">
-                        <img className="size-8.75 md:size-12.5" src={power_bi} alt="power-bi" title="Power BI" />
-                    </div>
-                </div>
-            </div>
-        </section>
-    );
-};
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default About;

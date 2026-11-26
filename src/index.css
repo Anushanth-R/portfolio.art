@@ -28,3 +28,10 @@ html, body {
         text-shadow: 0 0 10px var(--primary-color);
     }
 }
+
+#contact :is(input, textarea):is(:autofill, :-webkit-autofill) {
+  border-color: #333;
+  box-shadow: inset 0 0 0 100vmax #111;
+  -webkit-text-fill-color: white;
+  caret-color: white;
+}

@@ -1,17 +1,51 @@
 import { useState } from "react";
 
 const email = "anushanthr04@gmail.com";
+const formEndpoint = "https://formspree.io/f/maeokdkj";
 const fieldClass =
   "w-full rounded-lg border border-white/20 bg-black px-3 py-2.5 text-white focus-visible:outline-2 focus-visible:outline-[var(--primary-color)]";
 const linkClass =
   "text-[var(--primary-color)] underline underline-offset-4 hover:text-white";
 
 export default function Contact() {
-  const [showNotice, setShowNotice] = useState(false);
+  const [status, setStatus] = useState("idle");
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
-    setShowNotice(true);
+
+    if (status === "sending") return;
+
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") ?? "").trim();
+    const message = String(data.get("message") ?? "").trim();
+
+    if (!name || !message) {
+      setStatus("incomplete");
+      return;
+    }
+
+    data.set("name", name);
+    data.set("message", message);
+    setStatus("sending");
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+
+      if (!response.ok) {
+        setStatus("error");
+        return;
+      }
+
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -30,7 +64,7 @@ export default function Contact() {
           <a href={`mailto:${email}`} className={`break-all ${linkClass}`}>
             {email}
           </a>
-          
+
           <div className="mt-5 flex flex-wrap gap-4">
             <a
               href="https://www.linkedin.com/in/anushanth-r-9848b6244"
@@ -45,8 +79,9 @@ export default function Contact() {
         </div>
 
         <form
+          action={formEndpoint}
+          method="post"
           onSubmit={handleSubmit}
-          noValidate
           className="space-y-4 rounded-xl border border-white/15 bg-[var(--bg2-color)] p-5"
         >
           <div className="space-y-1.5">
@@ -55,6 +90,8 @@ export default function Contact() {
               id="contact-name"
               name="name"
               autoComplete="name"
+              required
+              maxLength={100}
               className={fieldClass}
             />
           </div>
@@ -66,6 +103,8 @@ export default function Contact() {
               name="email"
               type="email"
               autoComplete="email"
+              required
+              maxLength={254}
               className={fieldClass}
             />
           </div>
@@ -76,24 +115,28 @@ export default function Contact() {
               id="contact-message"
               name="message"
               rows={3}
+              required
+              maxLength={3000}
               className={`${fieldClass} resize-y`}
             />
           </div>
 
           <button
             type="submit"
-            className="min-h-11 w-full rounded-xl bg-[var(--primary-color)] px-5 py-2.5 font-bold text-black hover:bg-sky-300 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary-color)] sm:w-auto"
+            disabled={status === "sending"}
+            className="min-h-11 w-full rounded-xl bg-[var(--primary-color)] px-5 py-2.5 font-bold text-black enabled:hover:bg-sky-300 disabled:opacity-60 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--primary-color)] sm:w-auto"
           >
-            Send Message
+            {status === "sending" ? "Sending…" : "Send Message"}
           </button>
 
-          <p role="status" className="text-sm text-white/85 empty:hidden">
-            {showNotice && (
+          <p role="status" className="text-sm text-white/85">
+            {status === "sending" && "Sending your message…"}
+            {status === "sent" && "Thanks. Your message was sent."}
+            {status === "incomplete" && "Please enter your name and message."}
+            {status === "error" && (
               <>
-                This form isn’t set up to send messages yet.{" "}
-                <a href={`mailto:${email}`} className={linkClass}>
-                  Please email me directly.
-                </a>
+                I couldn’t send your message. Try again or{" "}
+                <a href={`mailto:${email}`} className={linkClass}>email me directly</a>.
               </>
             )}
           </p>
